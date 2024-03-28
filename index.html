@@ -1,11 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Card</title>
+
+    <style>
+        body{
+            background-color: #333333;
+        }
+        .prod-card{
+            height: 580px;
+            width: 340px;
+            background-color: #404040;
+            display: block;
+            margin: 30px auto;
+            box-shadow: 0 0 15px 4px #6b6a6a;
+            border-radius: 13px;
+        }
+        .prod-img{
+            height: 200px;
+            border-radius: 7px;
+            margin: 20px;
+        }
+        .prod-title{
+            color: #fff;
+            text-align: center;
+        }
+        .card-body{
+            margin-left: 20px;
+        }
+        .prod-descri{
+            color: #dbd7d7;
+            font-size: 18px;
+        }
+        .prod-price{
+            color: #fff;
+            font-size: 27px;
+        }
+        .qty-btn-container{
+            margin-bottom: 20px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn-qty{
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .qty-text{
+            font-size: 30px;
+            color: #fff;
+            margin: auto 10px;
+        }
+        
+        .btn{
+            font-size: 23px;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 12px;
+            display: block;
+            margin: 10px auto;
+            cursor: pointer;
+            background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(237,3,32,0.87) 20.8%, rgba(242,121,1,0.84) 74.4% );
+        }
+        .btn:hover{
+            transition: 0.2s;
+            box-shadow: 0 0 15px 3px rgb(233, 129, 129);
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Product Card</h1>
+    <div class="prod-card">
+        <img src="./img/headphone.jpg" alt="headphone" class="prod-img">
+       
+            <h1 class="prod-title">iPhone Headphone</h1>
+
+        <div class="card-body">
+            <p class="prod-descri">
+                Premium Wireless Bluetooth Headset Over Ear HD Voice Bluetooth Earphone Mobile
+            </p>
+            <p class="prod-price">
+                <b>₹1220/-</b>
+            </p>
+
+
+            <div class="qty-btn-container">
+                <img src="./img/minus.png" alt="" class="btn-qty">
+                <span class="qty-text">1</span>
+                <img src="./img/plus.png" alt="" class="btn-qty">
+            </div>
+
+            <button type="button" class="btn">
+                Buy Now
+            </button>
+        </div>
+    </div>
+
+
 </body>
+
 </html>
