@@ -11,7 +11,7 @@
             background-color: #333333;
         }
         .prod-card{
-            height: 580px;
+            height: 680px;
             width: 340px;
             background-color: #404040;
             display: block;
@@ -38,6 +38,12 @@
         .prod-price{
             color: #fff;
             font-size: 27px;
+        }
+
+        .qty-total{
+            font-size: 25px;
+            font-weight: bold;
+            color: #fff;
         }
         .qty-btn-container{
             margin-bottom: 20px; 
@@ -87,11 +93,16 @@
                 <b>₹1220/-</b>
             </p>
 
+            <p id="show-qty" class="qty-total">1 * 1220</p>
+
+            <p id="show-total" class="qty-total">Total 1220</p>
 
             <div class="qty-btn-container">
-                <img src="./img/minus.png" alt="" class="btn-qty">
-                <span class="qty-text">1</span>
-                <img src="./img/plus.png" alt="" class="btn-qty">
+                <img src="./img/minus.png" alt="" class="btn-qty" onclick="decre()">
+
+                <span class="qty-text" id="qty-text">1</span>
+
+                <img src="./img/plus.png" alt="" class="btn-qty" onclick="incre()">
             </div>
 
             <button type="button" class="btn">
@@ -100,6 +111,46 @@
         </div>
     </div>
 
+
+    <script>
+
+        function decre(){
+            const qtyText= document.getElementById("qty-text");
+            const showQty= document.getElementById("show-qty");
+            const showTotal= document.getElementById("show-total");
+
+            const qty= parseInt(qtyText.innerText);
+
+            if(qty>1){
+            qtyText.innerText= qty - 1;
+            }
+            else{
+                alert("You can't add less than 1 item!")
+            }
+
+            showQty.innerText= `${qty} * 1220`;
+            showTotal.innerText= `Total: ${qty * 1220}`
+        }
+
+        function incre(){
+            const qtyText= document.getElementById("qty-text");
+            const showQty= document.getElementById("show-qty");
+            const showTotal= document.getElementById("show-total");
+
+            const qty= parseInt(qtyText.innerText);
+
+            if(qty<10){
+            qtyText.innerText= qty + 1;
+            }
+            else{
+                alert("You can't add more than 10 items!")
+            }
+
+            showQty.innerText= `${qty} * 1220`;
+            showTotal.innerText= `Total: ${qty * 1220}`
+        }
+
+    </script>
 
 </body>
 
